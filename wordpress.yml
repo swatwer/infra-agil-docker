@@ -1,0 +1,16 @@
+wordpress:
+  image: wordpress
+  links:
+    - mariadb:mariadb
+  ports:
+    - 8080:80
+mariadb:
+  image: mariadb
+  ports:
+    - 33306:3306
+  environment:
+    MYSQL_ROOT_PASSWORD: devops
+    MYSQL_USER: wp
+    MYSQL_PASSWORD: wp-devops
+    MYSQL_DATABASE: wordpress
+
